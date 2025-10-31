@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Felix - Presentación Profesional</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Open+Sans:wght@400;600&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos generales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #000; /* Fondo negro */
+            color: #fff;
+            height: 100vh;
+            overflow-x: hidden;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Fondo de la página */
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000; /* Fondo negro */
+            z-index: -1;
+        }
+
+        /* Contenedor principal */
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            z-index: 1;
+        }
+
+        /* Título principal */
+        .title {
+            font-size: 3.8em;
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            color: #FFD700; /* Color dorado para un estilo elegante */
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-style: italic; /* Cursiva para un toque elegante */
+            opacity: 0;
+            animation: fadeInUp 1.5s ease-out forwards;
+        }
+
+        /* Subtítulo */
+        .subtitle {
+            font-size: 2em;
+            color: #fff;
+            font-weight: 400;
+            margin-bottom: 30px;
+            opacity: 0;
+            animation: fadeInUp 1.5s ease-out 0.5s forwards;
+        }
+
+        /* Botón principal */
+        .cta-button {
+            background-color: #FFD700;
+            color: #fff;
+            padding: 15px 50px;
+            font-size: 1.3em;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            opacity: 0;
+            animation: fadeInUp 1.5s ease-out 1s forwards;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.1);
+            background-color: #FFB300;
+        }
+
+        /* Animación de entrada de texto */
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Sección de información adicional */
+        .info-section {
+            margin-top: 40px;
+            font-size: 1.4em;
+            color: #fff;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+            transform: translateY(50px);
+            opacity: 0;
+            display: none; /* Inicialmente oculta */
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+            text-align: left;
+        }
+
+        .info-section p {
+            margin: 18px 0;
+            line-height: 1.8;
+        }
+
+        .info-section a {
+            text-decoration: none;
+            color: #FFD700;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .info-section a:hover {
+            color: #FFB300;
+        }
+
+        /* Diseño responsivo */
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2.8em;
+            }
+            .subtitle {
+                font-size: 1.6em;
+            }
+            .cta-button {
+                font-size: 1.2em;
+                padding: 14px 35px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Fondo visual -->
+    <div class="background"></div>
+
+    <!-- Contenedor principal -->
+    <div class="container">
+        <h1 class="title">¡Hola! Soy Felix</h1>
+        <h2 class="subtitle">Encantado de conocerte. Descubre más sobre mí.</h2>
+
+        <!-- Botón de acción principal -->
+        <button class="cta-button" onclick="showContactInfo()">Descubre más</button>
+    </div>
+
+    <!-- Sección de información adicional -->
+    <div class="info-section" id="infoSection">
+        <p><strong>Mi nombre es:</strong> Felix</p>
+        <p><strong>Fecha de nacimiento:</strong> 30 de agosto de 2010</p>
+        <p><strong>Edad:</strong> 15 años</p>
+        <p><strong>Altura:</strong> 1.76 m</p>
+        <p><strong>Ubicación:</strong> Buenos Aires, Argentina</p>
+        <p><strong>Escuela:</strong> EE32 - Ciencias Naturales</p>
+        <p><strong>Amigos:</strong> Dante, Joel, Dylan, Mati, Enzo</p>
+        <p><strong>Mi mejor nota:</strong> Historia</p>
+        <p><strong>Estoy programando por primera vez</strong>, y aunque tuve errores, ¡aquí estoy aprendiendo! :)</p>
+        <p><strong>Color de piel:</strong> Blanco</p>
+        <p><strong>Físico:</strong> Delgado, uso lentes</p>
+        <p><strong>Vivo con:</strong> Mi madre y hermana</p>
+        <p><strong>Tengo una gata llamada:</strong> Zafira</p>
+        <p><strong>Instagram:</strong> <a href="https://www.instagram.com/felixx_ld/" target="_blank">felixx_ld</a></p>
+        <p><strong>WhatsApp:</strong> No tengo :)</p>
+        <p><strong>Correo electrónico:</strong> felix@email.com</p>
+        <a href="mailto:felix@email.com">¡Envíame un correo!</a>
+    </div>
+
+    <!-- Script para mostrar la información -->
+    <script>
+        function showContactInfo() {
+            var infoSection = document.getElementById("infoSection");
+            if (infoSection.style.display === "none" || infoSection.style.display === "") {
+                infoSection.style.display = "block";
+                infoSection.style.opacity = "1";
+                infoSection.style.transform = "translateY(0)";
+            }
+        }
+    </script>
+
+</body>
+</html>
